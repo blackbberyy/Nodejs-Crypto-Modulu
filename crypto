@@ -1,0 +1,28 @@
+CRYPTO MODÜLÜ
+Node.js, crypto modülü aracılığıyla çeşitli şifreleme ve karma algoritmaları sağlar. Bu modül, şifreleme, karma, imza ve doğrulama işlemleri için işlevler sağlar.
+hash şifreleri bir dizi matematik algoritma ile şifreli bir çıktı haline dönüştürme işlemine verilen isimdir. Örneğin Bitcoin, SHA-256 isimli bir algoritma kullanıyor.
+const crypto=require('crypto')
+const secretKey="sha2568499300384774839394839*"
+const hash =crypto.createHash('sha512' , secretKey).update('benimparolam123456').digest('binary')
+console.log('hash' , hash)
+//digest iletilen verilerin özeti. Bu işlev, örneğin hex veya base64,binary gibi dönen değerin türünü tanımlayan bir girdi olarak bir dize alır
+anahtarı tanımlama
+const secretKey = "sha2568499300384774839394839*" kendimize özgü secretKey oluşturduk verdiğimiz algoritma şeklinde şifreye dönüştürülecek sha512 ise bunun için bir araç
+
+SHA-256 karma örneği:
+const crypto = require('crypto');
+const secret = 'mysecret';
+const hash = crypto.createHmac('sha256', secret)
+                   .update('Welcome to Node.js')
+                   .digest('hex');
+console.log(hash);
+Bu örnekte, SHA-256 algoritması kullanılarak "mysecret" gizli anahtarı ile "Welcome to Node.js" dizesinin karma özeti hesaplanır ve hexadecimal formatında yazdırılır.
+
+
+
+
+
+
+
+
+
